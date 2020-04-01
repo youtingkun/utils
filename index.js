@@ -8,4 +8,5 @@ function npmDemo(argument) {
     f1: f1
   }
 }
-module.exports = npmDemo()
+
+export default npmDemo
