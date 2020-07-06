@@ -255,6 +255,4 @@ export const changeToChinese = (Num) => {
   return newchar
 }
 
-console.log(22)
-
-console.log(3)
+console.log(4)
