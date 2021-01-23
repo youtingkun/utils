@@ -1,27 +1,27 @@
 // 邮箱
-export const isEmail = (s) => {
+const isEmail = (s) => {
   return /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((.[a-zA-Z0-9_-]{2,3}){1,2})$/.test(
     s
   )
 }
 
 // 手机号码
-export const isMobile = (s) => {
+const isMobile = (s) => {
   return /^1[0-9]{10}$/.test(s)
 }
 
 // 电话号码
-export const isPhone = (s) => {
+const isPhone = (s) => {
   return /^([0-9]{3,4}-)?[0-9]{7,8}$/.test(s)
 }
 
 // url地址
-export const isURL = (s) => {
+const isURL = (s) => {
   return /^http[s]?:\/\/.*/.test(s)
 }
 
 // 判断类型集合
-export const checkStr = (str, type) => {
+const checkStr = (str, type) => {
   switch (type) {
     case 'phone': //手机号码
       return /^1[3|4|5|6|7|8|9][0-9]{9}$/.test(str)
@@ -71,7 +71,7 @@ export const checkStr = (str, type) => {
 }
 
 // 身份证校验
-export const isCardID = (sId) => {
+const isCardID = (sId) => {
   if (!/(^\d{15}$)|(^\d{17}(\d|X|x)$)/.test(sId)) {
     console.log('你输入的身份证长度或格式错误')
     return false
@@ -150,4 +150,14 @@ export const isCardID = (sId) => {
   }
 
   return true
+}
+
+
+export default {
+    isEmail,
+    isMobile,
+    isPhone,
+    isURL,
+    checkStr,
+    isCardID,
 }

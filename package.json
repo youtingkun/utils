@@ -1,0 +1,32 @@
+{
+  "name": "ytk-utils",
+  "version": "1.0.0",
+  "description": "常用的工具",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md",
+    "postversion": "git push --follow-tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/youtingkun/ytk-utils.git"
+  },
+  "author": "youtingkun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/youtingkun/ytk-utils/issues"
+  },
+  "homepage": "https://github.com/youtingkun/ytk-utils#readme",
+  "dependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "conventional-changelog-cli": "^2.1.1"
+  },
+  "devDependencies": {
+    "husky": "^4.3.8"
+  },
+  "hooks": {
+    "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+  }
+}
