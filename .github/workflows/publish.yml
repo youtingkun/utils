@@ -26,7 +26,7 @@ jobs:
     - run: npm i
     - run: npm publish # 如果发布之前需要构建，可添加prepublishOnly的生命周期脚本
       env:
-        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}} # 上面在Github Secrets中设置的密钥
+        NODE_AUTH_TOKEN: 79fc7f89-420b-4394-a8b0-b5c81010141e # 上面在Github Secrets中设置的密钥
 
   github-release:
     needs: publish
@@ -40,4 +40,4 @@ jobs:
     - run: npm i -g github-release-from-changelog
     - run: github-release-from-changelog
       env:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        GITHUB_TOKEN: 79fc7f89-420b-4394-a8b0-b5c81010141e
