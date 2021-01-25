@@ -1,5 +1,6 @@
-import test from './test.js';
-import RegExpRule from './RegExpRule';
+import test from './modules/test.js';
+import RegExpRule from './modules/RegExpRule';
+import Object from './modules/Object'
 
 function npmDemo(argument) {
   var name = 'finit'
@@ -15,5 +16,9 @@ function npmDemo(argument) {
 
 export default {
     test,
-    RegExpRule
+    RegExpRule,
+    Object
 }
+
+//   Git commit之后，运行npm version patch,就可以添加新版本，并把记录添加到CHANGELOG.md里面。
+//  再执行npm postversion 推送到远程仓库并发布。
