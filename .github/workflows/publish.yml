@@ -40,4 +40,4 @@ jobs:
     - run: npm i -g github-release-from-changelog
     - run: github-release-from-changelog
       env:
-        GITHUB_TOKEN: ${{secrets.NPM_TOKEN}}
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
