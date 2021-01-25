@@ -1,3 +1,12 @@
+## [1.0.7](https://github.com/youtingkun/ytk-utils/compare/v1.0.6...v1.0.7) (2021-01-25)
+
+
+### Bug Fixes
+
+* npm 地址 ([d539779](https://github.com/youtingkun/ytk-utils/commit/d5397792c5881e3dabf6ba63d41fbe68b2ecce35))
+
+
+
 ## [1.0.6](https://github.com/youtingkun/ytk-utils/compare/v1.0.5...v1.0.6) (2021-01-25)
 
 
