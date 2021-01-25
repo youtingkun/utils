@@ -1,5 +1,6 @@
-import test from './test.js';
-import RegExpRule from './RegExpRule';
+import test from './modules/test.js';
+import RegExpRule from './modules/RegExpRule';
+import Object from './modules/Object'
 
 function npmDemo(argument) {
   var name = 'finit'
@@ -15,5 +16,6 @@ function npmDemo(argument) {
 
 export default {
     test,
-    RegExpRule
+    RegExpRule,
+    Object
 }
