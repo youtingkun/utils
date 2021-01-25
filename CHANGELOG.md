@@ -1,3 +1,13 @@
+## [1.0.5](https://github.com/youtingkun/ytk-utils/compare/v1.0.3...v1.0.5) (2021-01-25)
+
+
+### Features
+
+* traverse obj ([57f942a](https://github.com/youtingkun/ytk-utils/commit/57f942a9d2e913a91cd882d93178de1056203408))
+* traverse obj ([7edbaaf](https://github.com/youtingkun/ytk-utils/commit/7edbaafb42759e8959bc6fbb53bd373b0fc624c1))
+
+
+
 ## [1.0.4](https://github.com/youtingkun/ytk-utils/compare/v1.0.3...v1.0.4) (2021-01-25)
 
 
