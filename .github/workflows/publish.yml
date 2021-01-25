@@ -22,7 +22,7 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: 12
-        registry-url: https://registry.npmjs.org/
+        registry-url: https://registry.npmjs.org/wuscarecrow
     - run: npm i
     - run: npm publish # 如果发布之前需要构建，可添加prepublishOnly的生命周期脚本
       env:
@@ -36,7 +36,7 @@ jobs:
     - uses: actions/setup-node@v1
       with:
         node-version: 12
-        registry-url: https://registry.npmjs.org/
+        registry-url: https://registry.npmjs.org/wuscarecrow
     - run: npm i -g github-release-from-changelog
     - run: github-release-from-changelog
       env:
