@@ -1,6 +1,6 @@
 {
   "name": "ytk-utils",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "常用的工具",
   "main": "index.js",
   "scripts": {
