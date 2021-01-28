@@ -14,20 +14,20 @@ jobs:
   #   - run: npm i
   #   - run: npm test
 
-  publish:
-    # needs: test
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v1
-      with:
-        node-version: '12.x'
-        registry-url: 'https://registry.npmjs.org'
-    - run: npm i
-    - run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
-    - run: npm publish # 如果发布之前需要构建，可添加prepublishOnly的生命周期脚本
-      env:
-        NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}} # 上面在Github Secrets中设置的密钥
+  # publish:
+  #   # needs: test
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@v2
+  #   - uses: actions/setup-node@v1
+  #     with:
+  #       node-version: '12.x'
+  #       registry-url: 'https://registry.npmjs.org'
+  #   - run: npm i
+  #   - run: npm config set '//registry.npmjs.org/:_authToken' "${NPM_TOKEN}"
+  #   - run: npm publish # 如果发布之前需要构建，可添加prepublishOnly的生命周期脚本
+  #     env:
+  #       NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}} # 上面在Github Secrets中设置的密钥
 
   github-release:
     needs: publish
