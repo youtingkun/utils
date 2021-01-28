@@ -1,15 +1,15 @@
-let a={
-    x:{
-        y:1,
-        b:{
-            a:2
-        }
-    },
-    z:{
-        b:2
-    }
-}
-traverse(a)
+// let a={
+//     x:{
+//         y:1,
+//         b:{
+//             a:2
+//         }
+//     },
+//     z:{
+//         b:2
+//     }
+// }
+// traverse(a)
 
 
 const  traverse=function(o){
