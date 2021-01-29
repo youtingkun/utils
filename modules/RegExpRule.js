@@ -153,6 +153,20 @@ const isCardID = (sId) => {
 }
 
 
+
+// 整数
+const isInteger = (s)=>{
+    return  /^-?[1-9]\d*$/.test(s)
+}
+// 正整数
+const isPositiveInteger = (s)=>{
+    return  /^[1-9]\d*$/.test(s)
+}
+// 负整数
+const isNegativeInteger = (s)=>{
+    return  /^-[1-9]\d*$/.test(s)
+}
+
 export default {
     isEmail,
     isMobile,
@@ -160,4 +174,7 @@ export default {
     isURL,
     checkStr,
     isCardID,
+    isPositiveInteger,
+    isInteger,
+    isNegativeInteger
 }
