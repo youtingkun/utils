@@ -11,7 +11,7 @@
 // }
 // traverse(a)
 
-
+// 遍历对象
 const  traverse=function(o){
     for (let i in o) {
         if (!!o[i] && typeof (o[i]) === "object") {
