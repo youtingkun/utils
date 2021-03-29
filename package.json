@@ -1,8 +1,6 @@
-
-
 {
   "name": "ytk-utils",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "utils",
   "main": "index.js",
   "scripts": {
