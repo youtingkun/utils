@@ -1,3 +1,13 @@
+## [1.0.21](https://github.com/youtingkun/ytk-utils/compare/v1.0.20...v1.0.21) (2021-06-05)
+
+
+### Features
+
+* treeTolist ([2f450e5](https://github.com/youtingkun/ytk-utils/commit/2f450e56317bfa876beac303f5c289efc7d885f3))
+* version demo ([1616677](https://github.com/youtingkun/ytk-utils/commit/1616677184a89336bd505417f986f0f7f4ed0507))
+
+
+
 ## [1.0.20](https://github.com/youtingkun/ytk-utils/compare/v1.0.19...v1.0.20) (2021-06-05)
 
 
