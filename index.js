@@ -1,3 +1,5 @@
+export { getQueryString } from "./modules/url.js";
+
 import test from "./modules/test.js";
 import RegExpRule from "./modules/RegExpRule";
 import Object from "./modules/Object";
