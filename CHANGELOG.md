@@ -1,3 +1,13 @@
+## [1.0.35](https://github.com/youtingkun/ytk-utils/compare/v1.0.34...v1.0.35) (2021-07-25)
+
+
+### Features
+
+* 加回自动发布 ([1303b25](https://github.com/youtingkun/ytk-utils/commit/1303b25780dca58d27b4386b5e079b8ee48786dc))
+* 修改导出方式 ([837a128](https://github.com/youtingkun/ytk-utils/commit/837a12897716fcfdaf76b3d4f908a53b325e106c))
+
+
+
 ## [1.0.34](https://github.com/youtingkun/ytk-utils/compare/v1.0.33...v1.0.34) (2021-07-25)
 
 
