@@ -1,6 +1,6 @@
 {
   "name": "@youtingkun/utils",
-  "version": "1.0.0",
+  "version": "1.0.31",
   "description": "utils",
   "main": "index.js",
   "scripts": {
