@@ -1,5 +1,5 @@
 {
-  "name": "ytk-utils",
+  "name": "@ytk/utils",
   "version": "1.0.28",
   "description": "utils",
   "main": "index.js",
