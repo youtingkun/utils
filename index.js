@@ -1,20 +1,8 @@
-export { getQueryString } from "./modules/url.js";
-
+export { getQueryString } from "./modules/url";
+export { arrayToObjectTree } from "./modules/Array";
 import test from "./modules/test.js";
 import RegExpRule from "./modules/RegExpRule";
 import Object from "./modules/Object";
-import Array from "./modules/Array";
-
-function npmDemo(argument) {
-  var name = "finit";
-  var f1 = function f(arg) {
-    console.log(arg, "新的方法");
-  };
-  return {
-    name: name,
-    f1: f1,
-  };
-}
 
 export default {
   test,

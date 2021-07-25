@@ -1,6 +1,6 @@
 // 把一个平面数组根据parentId转为一个树结构的数组
 
-function toTree(data) {
+export function arrayToObjectTree(data) {
   // 空数组
   let result = [];
   // 判断不是数组  直接返回
@@ -36,7 +36,7 @@ function toTree(data) {
   return result;
 }
 
-function listToTree(data) {
+export function listToTree(data) {
   let temp = {};
   let treeData = [];
   for (let i = 0; i < data.length; i++) {
