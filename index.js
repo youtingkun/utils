@@ -17,5 +17,5 @@ export {
   isSet,
 } from "./modules/typeRule";
 
-//  Git commit之后，运行npm version patch,就可以添加新版本，并把记录添加到CHANGELOG.md里面。由于推送到github的网络不稳定，取消掉自动发布到npm，改为自己手动发布。
-// 发布：npm login, npm publish
+//  Git commit之后，运行npm version v1.0.0,就可以添加新版本，并把记录添加到CHANGELOG.md里面,并推送到github，并自动发布到npm。
+// 如果推送到github时网络超时，重新运行 npm run postversion
