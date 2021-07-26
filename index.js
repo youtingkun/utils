@@ -1,5 +1,6 @@
 export { getQueryString } from "./modules/url";
 export { listToTree } from "./modules/Array";
+export { traverseObj, treeToList } from "./modules/Object";
 export {
   isString,
   isNumber,

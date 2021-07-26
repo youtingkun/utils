@@ -1,14 +1,14 @@
 // 遍历对象
-const traverse = function (o) {
+export function traverseObj(o) {
   for (let i in o) {
     if (!!o[i] && typeof o[i] === "object") {
       console.log(i, o[i]);
       traverse(o[i]);
     }
   }
-};
-
-const treeToList = function (data) {
+}
+// 树转为数组
+export function treeToList(data) {
   let res = [];
   const dfs = (tree) => {
     tree.forEach((item) => {
@@ -21,6 +21,4 @@ const treeToList = function (data) {
   };
   dfs(data);
   return res;
-};
-
-export { traverse, treeToList };
+}
