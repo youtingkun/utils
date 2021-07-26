@@ -1,5 +1,5 @@
 export { getQueryString } from "./modules/url";
-export { arrayToObjectTree } from "./modules/Array";
+export { listToTree } from "./modules/Array";
 export {
   isString,
   isNumber,

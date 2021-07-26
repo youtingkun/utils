@@ -1,6 +1,6 @@
 // 把一个平面数组根据parentId转为一个树结构的数组
 
-export function arrayToObjectTree(data) {
+export function listToTree(data) {
   // 空数组
   let result = [];
   // 判断不是数组  直接返回
@@ -11,21 +11,20 @@ export function arrayToObjectTree(data) {
   data.forEach((item) => {
     delete item.children;
   });
-  //  空对象
-  let map = {};
-  data.forEach((item) => {
-    map[item.id] = item;
-  });
-
   /**
    * map对象的 键: 是每个id  值：对应的item
    * 1: {id: 1, parentId: 0, name: "body"}
    * 2: {id: 2, parentId: 1, name: "title"}
    * 3: {id: 3, parentId: 2, name: "div"}
    */
+  let map = {};
+  data.forEach((item) => {
+    map[item.id] = item;
+  });
+
   data.forEach((item) => {
     // item.parentId 为0时 返回underfined
-    let parent = map[item.parentId];
+    let parent = map[item.parentId]; // 这里的赋值由于是地址的引用，所以对parent值进行操作，也会改变map的值
     if (parent) {
       (parent.children || (parent.children = [])).push(item);
     } else {
@@ -34,23 +33,4 @@ export function arrayToObjectTree(data) {
     }
   });
   return result;
-}
-
-export function listToTree(data) {
-  let temp = {};
-  let treeData = [];
-  for (let i = 0; i < data.length; i++) {
-    temp[data[i].id] = data[i];
-  }
-  for (let i in temp) {
-    if (+temp[i].parentId != 0) {
-      if (!temp[temp[i].parentId].children) {
-        temp[temp[i].parentId].children = [];
-      }
-      temp[temp[i].parentId].children.push(temp[i]);
-    } else {
-      treeData.push(temp[i]);
-    }
-  }
-  return treeData;
 }
