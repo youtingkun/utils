@@ -1,6 +1,6 @@
 export { getQueryString } from "./modules/url";
-export { listToTree } from "./modules/Array";
-export { traverseObj, treeToList } from "./modules/Object";
+export { listToTree } from "./modules/array";
+export { traverseObj, treeToList } from "./modules/object";
 export {
   isString,
   isNumber,
@@ -16,7 +16,7 @@ export {
   isSymbol,
   isPromise,
   isSet,
-} from "./modules/typeRule";
+} from "./modules/type-rule";
 export { scrollToTop } from "./modules/windows";
 
 //  Git commit之后，运行npm version v1.0.0,就可以添加新版本，并把记录添加到CHANGELOG.md里面,并推送到github，并自动发布到npm。
