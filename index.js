@@ -1,6 +1,6 @@
 export { getQueryString } from "./modules/url";
 export { listToTree } from "./modules/array";
-export { traverseObj, treeToList } from "./modules/object";
+export { traverseObj, treeToList, deepCopy } from "./modules/object";
 export {
   isString,
   isNumber,
