@@ -1,3 +1,16 @@
+## [1.0.37](https://github.com/youtingkun/ytk-utils/compare/v1.0.36...v1.0.37) (2021-08-25)
+
+
+### Features
+
+* change name ([d73cda5](https://github.com/youtingkun/ytk-utils/commit/d73cda52e9745c55e3a3202589d1670311830b46))
+* deepCopy ([2b7fc4a](https://github.com/youtingkun/ytk-utils/commit/2b7fc4a8d958380db64f84448aa68c31e1be95a2))
+* number ([ff5de37](https://github.com/youtingkun/ytk-utils/commit/ff5de371533ee506ad2fa67289efbeb8a8a3f496))
+* time ([49e39c8](https://github.com/youtingkun/ytk-utils/commit/49e39c8d5c848aad554532b2198b301a0350cc4e))
+* windows ([57c3590](https://github.com/youtingkun/ytk-utils/commit/57c35900dc4a66faeda2884665d027584bcd2341))
+
+
+
 ## [1.0.36](https://github.com/youtingkun/ytk-utils/compare/v1.0.35...v1.0.36) (2021-07-26)
 
 
