@@ -9,29 +9,16 @@ export const injectScript = (src) => {
 };
 
 // 根据url下载
-export const downloadByUrl = (url) => {
-  let isChrome = navigator.userAgent.toLowerCase().indexOf("chrome") > -1;
-  let isSafari = navigator.userAgent.toLowerCase().indexOf("safari") > -1;
-  if (isChrome || isSafari) {
-    let link = document.createElement("a");
-    link.href = url;
-    if (link.download !== undefined) {
-      let fileName = url.substring(url.lastIndexOf("/") + 1, url.length);
-      link.download = fileName;
-    }
-    if (document.createEvent) {
-      let e = document.createEvent("MouseEvents");
-      e.initEvent("click", true, true);
-      link.dispatchEvent(e);
-      return true;
-    }
-  }
-  if (url.indexOf("?") === -1) {
-    url += "?download";
-  }
-  window.open(url, "_self");
-  return true;
-};
+export function downloadByUrl(url) {
+  let fileName = url.substring(url.lastIndexOf("/") + 1, url.length);
+  let link = document.createElement("a");
+  link.style.display = "none";
+  link.download = fileName;
+  link.href = url;
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
 
 // 根据文件数据和文件名下载
 export function downloadByData(data, fileName) {
