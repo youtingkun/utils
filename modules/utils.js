@@ -8,7 +8,8 @@ export const injectScript = (src) => {
   t.parentNode.insertBefore(s, t);
 };
 
-// 根据url下载
+// 直接给a标签设置href链接会打开一个新的下载窗口，用户点击保存之后会关闭。
+// 根据url下载，这种方式就不会打开一个新的下载窗口，体验好一点。
 export function downloadByUrl(url) {
   let fileName = url.substring(url.lastIndexOf("/") + 1, url.length);
   let link = document.createElement("a");
