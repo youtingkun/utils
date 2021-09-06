@@ -1,27 +1,27 @@
 // 邮箱
-const isEmail = (s) => {
+export function isEmail(s) {
   return /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((.[a-zA-Z0-9_-]{2,3}){1,2})$/.test(
     s
   );
-};
+}
 
 // 手机号码
-const isMobile = (s) => {
+export function isMobile(s) {
   return /^1[0-9]{10}$/.test(s);
-};
+}
 
 // 电话号码
-const isPhone = (s) => {
+export function isPhone(s) {
   return /^([0-9]{3,4}-)?[0-9]{7,8}$/.test(s);
-};
+}
 
 // url地址
-const isURL = (s) => {
+export function isURL(s) {
   return /^http[s]?:\/\/.*/.test(s);
-};
+}
 
 // 身份证校验
-const isCardID = (sId) => {
+export function isCardID(sId) {
   if (!/(^\d{15}$)|(^\d{17}(\d|X|x)$)/.test(sId)) {
     console.log("你输入的身份证长度或格式错误");
     return false;
@@ -100,28 +100,22 @@ const isCardID = (sId) => {
   }
 
   return true;
-};
+}
 
 // 整数
-const isInteger = (s) => {
+export function isInteger(s) {
   return /^-?[1-9]\d*$/.test(s);
-};
+}
 // 正整数
-const isPositiveInteger = (s) => {
+export function isPositiveInteger(s) {
   return /^[1-9]\d*$/.test(s);
-};
+}
 // 负整数
-const isNegativeInteger = (s) => {
+export function isNegativeInteger(s) {
   return /^-[1-9]\d*$/.test(s);
-};
+}
 
-export default {
-  isEmail,
-  isMobile,
-  isPhone,
-  isURL,
-  isCardID,
-  isPositiveInteger,
-  isInteger,
-  isNegativeInteger,
-};
+// 正数
+export function isPositive(s) {
+  return /^(0*[1-9][0-9]*(\.[0-9]+)?|0+\.[0-9]*[1-9][0-9]*)$/.test(s);
+}
