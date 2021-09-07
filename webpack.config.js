@@ -4,6 +4,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "main.js",
+    libraryTarget: "umd", // 保持原函数名
   },
   module: {
     rules: [
