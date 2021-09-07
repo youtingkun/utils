@@ -1,3 +1,12 @@
+## [2.0.6](https://github.com/youtingkun/ytk-utils/compare/v2.0.5...v2.0.6) (2021-09-07)
+
+
+### Bug Fixes
+
+* ts ([566ff82](https://github.com/youtingkun/ytk-utils/commit/566ff82dd8e606cf8c733c26d23d456c607d0d10))
+
+
+
 ## [2.0.5](https://github.com/youtingkun/ytk-utils/compare/v2.0.4...v2.0.5) (2021-09-07)
 
 
