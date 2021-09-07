@@ -14,15 +14,21 @@ module.exports = {
     // 方案1：对ts文件也使用babel-loader，然后在.babelrc里面使用"@babel/preset-typescript"，不会使用tsconfig.json里面的配置。
     // 方案2：对ts文件使用ts-loader，先把ts/tsx 转成 js/jsx，会使用tsconfig.json里面的配置，然后再用 babel-loader 去调用 babel 系列插件，编译成最终的 js
     rules: [
+      //   {
+      //     // 同时匹配js或者ts文件
+      //     test: /\.(js|ts)$/,
+      //     exclude: /node_modules/,
+      //     use: [
+      //       {
+      //         loader: "babel-loader",
+      //       },
+      //     ],
+      //   },
+
       {
-        // 同时匹配js或者ts文件
-        test: /\.(js|ts)$/,
+        test: /\.ts$/,
         exclude: /node_modules/,
-        use: [
-          {
-            loader: "babel-loader",
-          },
-        ],
+        use: ["babel-loader", { loader: "ts-loader" }], // 执行顺序从右到左
       },
     ],
   },

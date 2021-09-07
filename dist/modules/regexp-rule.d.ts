@@ -1,0 +1,9 @@
+export declare function isEmail(s: any): boolean;
+export declare function isMobile(s: any): boolean;
+export declare function isPhone(s: any): boolean;
+export declare function isURL(s: any): boolean;
+export declare function isCardID(sId: any): boolean;
+export declare function isInteger(s: any): boolean;
+export declare function isPositiveInteger(s: any): boolean;
+export declare function isNegativeInteger(s: any): boolean;
+export declare function isPositive(s: any): boolean;
