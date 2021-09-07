@@ -1,3 +1,12 @@
+## [2.0.1](https://github.com/youtingkun/ytk-utils/compare/v2.0.0...v2.0.1) (2021-09-07)
+
+
+### Features
+
+* add webapck ([a5b5a88](https://github.com/youtingkun/ytk-utils/commit/a5b5a8812b55ae14a1bef6393f4f32c0ae680294))
+
+
+
 # [2.0.0](https://github.com/youtingkun/ytk-utils/compare/v1.0.37...v2.0.0) (2021-09-07)
 
 
