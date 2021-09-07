@@ -1,3 +1,4 @@
+declare const window: any;
 // 动态的引入js脚本
 export const injectScript = (src) => {
   const s = document.createElement("script");

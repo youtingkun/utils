@@ -12,7 +12,7 @@ export async function imgCompress(imgFile, quality, maxSize) {
     const dataURL = await file2DataURL(imgFile);
     const img = await dataURL2Image(dataURL);
     const compressedDataURL = await canvasCompress(img, quality, type);
-    const compressedResult = await dataURL2Blob(compressedDataURL, type);
+    const compressedResult: any = await dataURL2Blob(compressedDataURL, type);
     compressedResult.fileName = imgFile.name;
     console.log("压缩后的大小：", compressedResult.size);
     resolve(compressedResult);
@@ -30,7 +30,7 @@ function file2DataURL(file) {
   });
 }
 
-function dataURL2Image(dataURL, callback) {
+function dataURL2Image(dataURL) {
   return new Promise((resolve, reject) => {
     const img = new Image();
     img.onload = () => {

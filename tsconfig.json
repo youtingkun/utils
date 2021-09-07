@@ -4,7 +4,10 @@
     "module": "commonjs", // 编译出的代码采用的模块规范
     "target": "es5", // 编译出的代码采用 ES 的哪个版本
     "sourceMap": true, // 输出 Source Map 方便调试
-    "noEmit": true // 不输出文件，只做类型检查
+    "noEmit": true, // 不输出文件，只做类型检查
+    /*当目标是ES5或ES3的时候提供对for-of、扩展运算符和解构赋值中对于迭代器的完整支持*/
+    "downlevelIteration": true,
+    "lib": ["dom", "es5", "es6", "es7", "dom.iterable"]
   },
 
   "exclude": [

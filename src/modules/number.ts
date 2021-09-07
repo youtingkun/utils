@@ -35,7 +35,7 @@ export const changeToChinese = (Num) => {
       //若数量超过拾亿单位，提示
     }
     var tmpnewchar = "";
-    var perchar = part[0].charAt(i);
+    var perchar: any = part[0].charAt(i);
     switch (perchar) {
       case "0":
         tmpnewchar = "零" + tmpnewchar;

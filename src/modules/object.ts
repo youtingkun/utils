@@ -3,7 +3,7 @@ export function traverseObj(o) {
   for (let i in o) {
     if (!!o[i] && typeof o[i] === "object") {
       console.log(i, o[i]);
-      traverse(o[i]);
+      traverseObj(o[i]);
     }
   }
 }
