@@ -1,5 +1,5 @@
 // 获取url的参数
-export function getQueryString() {
+export function getQueryString(): object {
   let params = {};
   const searchUrl =
     window.location.search.split("?")[1] ||
