@@ -1,6 +1,6 @@
 {
   "name": "@youtingkun/utils",
-  "version": "2.0.6",
+  "version": "2.0.7",
   "description": "utils",
   "main": "./dist/main.js",
   "scripts": {
