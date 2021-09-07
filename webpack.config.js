@@ -3,7 +3,7 @@ module.exports = {
   entry: "./src/index.ts",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "main.js",
+    filename: "index.js",
     libraryTarget: "umd", // 保持原函数名
   },
   resolve: {
