@@ -25,7 +25,7 @@ export {
   getRecentMonthDays,
   getRecentYearMonths,
 } from "./modules/time";
-export { downloadByData, downloadByUrl } from "./modules/utils";
+export { injectScript } from "./modules/utils";
 export {
   isEmail,
   isMobile,

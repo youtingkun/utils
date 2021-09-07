@@ -1,5 +1,4 @@
 // 把一个平面数组根据parentId转为一个树结构的数组
-
 export function listToTree(data) {
   // 空数组
   let result = [];
@@ -33,4 +32,19 @@ export function listToTree(data) {
     }
   });
   return result;
+}
+
+/**
+ * @description: 数组去重
+ * @param {*} arr
+ * @return {*}
+ */
+export function uniqueArray(arr) {
+  if (!Array.isArray(arr)) {
+    throw new Error("The first parameter must be an array");
+  }
+  if (arr.length == 1) {
+    return arr;
+  }
+  return [...new Set(arr)];
 }

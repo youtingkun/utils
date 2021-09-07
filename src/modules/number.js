@@ -1,104 +1,15 @@
-// 动态的引入js脚本
-export const injectScript = (src) => {
-  const s = document.createElement("script");
-  s.type = "text/javascript";
-  s.async = true;
-  s.src = src;
-  const t = document.getElementsByTagName("script")[0];
-  t.parentNode.insertBefore(s, t);
-};
-
-// 直接给a标签设置href链接会打开一个新的下载窗口，用户点击保存之后会关闭。
-// 根据url下载，这种方式就不会打开一个新的下载窗口，体验好一点。
-export function downloadByUrl(url) {
-  let fileName = url.substring(url.lastIndexOf("/") + 1, url.length);
-  let link = document.createElement("a");
-  link.style.display = "none";
-  link.download = fileName;
-  link.href = url;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+// 求两个数的最大公约数
+//思想是采用辗转相除的方法，用大的数去除以小的那个数，然后再用小的数去除以的得到的 余数，一直这样递归下去，直到余数为 0 时，最后的被除数就是两个数的最大公约数。
+export function getMaxCommonDivisor(a, b) {
+  if (b === 0) return a;
+  return getMaxCommonDivisor(b, a % b);
 }
 
-// 根据文件数据和文件名下载
-export function downloadByData(data, fileName) {
-  const blob = new Blob([data], {
-    type: data.type,
-  });
-  const name = `${fileName}`;
-  const a = document.createElement("a");
-  a.download = name;
-  a.style.display = "none";
-  a.href = URL.createObjectURL(blob);
-  document.body.appendChild(a);
-  a.click();
-  URL.revokeObjectURL(a.href);
-  document.body.removeChild(a);
+// 求两个数的最小公倍数
+// 思想是采用将两个数相乘，然后除以它们的最大公约数
+export function getMinCommonMultiple(a, b) {
+  return (a * b) / getMaxCommonDivisor(a, b);
 }
-
-// 判断元素是否包含某个class
-export const hasClass = (el, className) => {
-  let reg = new RegExp("(^|\\s)" + className + "(\\s|$)");
-  return reg.test(el.className);
-};
-
-// 给元素添加class
-export const addClass = (el, className) => {
-  if (hasClass(el, className)) {
-    return;
-  }
-  let newClass = el.className.split(" ");
-  newClass.push(className);
-  el.className = newClass.join(" ");
-};
-
-// 移除元素的某个class
-export const removeClass = (el, className) => {
-  if (!hasClass(el, className)) {
-    return;
-  }
-  let reg = new RegExp("(^|\\s)" + className + "(\\s|$)", "g");
-  el.className = el.className.replace(reg, " ");
-};
-
-// 判断元素是否在视窗范围内
-export const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
-  const { top, left, bottom, right } = el.getBoundingClientRect();
-  const { innerHeight, innerWidth } = window;
-  return partiallyVisible
-    ? ((top > 0 && top < innerHeight) ||
-        (bottom > 0 && bottom < innerHeight)) &&
-        ((left > 0 && left < innerWidth) || (right > 0 && right < innerWidth))
-    : top >= 0 && left >= 0 && bottom <= innerHeight && right <= innerWidth;
-};
-
-// 获取滚动的坐标
-export const getScrollPosition = (el = window) => ({
-  x: el.pageXOffset !== undefined ? el.pageXOffset : el.scrollLeft,
-  y: el.pageYOffset !== undefined ? el.pageYOffset : el.scrollTop,
-});
-
-// 滚动到顶部
-export const scrollToTop = () => {
-  const c = document.documentElement.scrollTop || document.body.scrollTop;
-  if (c > 0) {
-    window.requestAnimationFrame(scrollToTop);
-    window.scrollTo(0, c - c / 8);
-  }
-};
-
-// 洗牌算法
-export const shuffle = (arr) => {
-  var result = [],
-    random;
-  while (arr.length > 0) {
-    random = Math.floor(Math.random() * arr.length);
-    result.push(arr[random]);
-    arr.splice(random, 1);
-  }
-  return result;
-};
 
 // 将数字转化成汉字大写的金额
 export const changeToChinese = (Num) => {
