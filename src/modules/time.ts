@@ -99,3 +99,14 @@ export function getRecentYearMonths() {
   console.log("最近12个月：", months);
   return months;
 }
+
+// 计算指定日期是一年中的第几天
+export function dayOfYear(date: Date) {
+  Math.floor(
+    (date.getTime() - new Date(date.getFullYear(), 0, 0).getTime()) /
+      1000 /
+      60 /
+      60 /
+      24
+  );
+}

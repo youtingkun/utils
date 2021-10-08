@@ -65,3 +65,10 @@ function dataURL2Blob(dataURL, type) {
     resolve(blob);
   });
 }
+
+// 生成随机的16进制颜色
+export function randomHex() {
+  return `#${Math.floor(Math.random() * 0xffffff)
+    .toString(16)
+    .padEnd(6, "0")}`;
+}
