@@ -114,8 +114,25 @@ export function isPositiveInteger(s) {
 export function isNegativeInteger(s) {
   return /^-[1-9]\d*$/.test(s);
 }
-
-// 正数
+// 浮点数
+export function isFloat(s) {
+  return /^(-?\d+)(\.\d+)?$/.test(s);
+}
+// 正浮点数
 export function isPositive(s) {
   return /^(0*[1-9][0-9]*(\.[0-9]+)?|0+\.[0-9]*[1-9][0-9]*)$/.test(s);
+}
+// 负浮点数
+export function isNegative(s) {
+  return /^(-(([0-9]+\.[0-9]*[1-9][0-9]*)|([0-9]*[1-9][0-9]*\.[0-9]+)|([0-9]*[1-9][0-9]*)))$/.test(
+    s
+  );
+}
+//非负数
+export function isNotNegative(s) {
+  return /^\d+(\.\d+)?$/.test(s);
+}
+// 非正数
+export function isNotPositive(s) {
+  return /^((-\d+(\.\d+)?)|(0+(\.0+)?))$/.test(s);
 }
