@@ -60,6 +60,15 @@ export const scrollToTop = () => {
   }
 };
 
+// 滚动到某个元素的顶部
+const scrollToElementTop = (element) => {
+  element.scrollIntoView({ behavior: "smooth", block: "start" });
+};
+// 滚动到某个元素的底部
+const scrollToElementBottom = (element) => {
+  element.scrollIntoView({ behavior: "smooth", block: "end" });
+};
+
 // 洗牌算法
 export const shuffle = (arr) => {
   var result = [],
@@ -86,6 +95,10 @@ export function copyToBoard(value) {
   document.body.removeChild(element);
   return false;
 }
+// 复制内容到剪贴板
+const copyToClipboard = (text) => {
+  navigator.clipboard?.writeText && navigator.clipboard.writeText(text);
+};
 
 /**
  * @description:
