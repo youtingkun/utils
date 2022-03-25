@@ -46,5 +46,6 @@ export function uniqueArray(arr) {
   if (arr.length == 1) {
     return arr;
   }
-  return [...new Set(arr)];
+  let set = new Set(arr);
+  return Array.from(set);
 }

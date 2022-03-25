@@ -10,7 +10,7 @@
  * 通过枚举值获取描述：STATUS.getDescFromValue(STATUS.WAIT)
  *
  */
-export function createEnum(definition) {
+export function createEnum(definition:any) {
   const strToValueMap = {};
   const numToDescMap = {};
   for (const enumName of Object.keys(definition)) {

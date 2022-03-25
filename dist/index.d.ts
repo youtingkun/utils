@@ -6,3 +6,4 @@ export { scrollToTop } from "./modules/windows";
 export { countDown, getRecentWeekDays, getRecentDayHours, getRecentMonthDays, getRecentYearMonths, } from "./modules/time";
 export { injectScript } from "./modules/utils";
 export { isEmail, isMobile, isPhone, isURL, isCardID, isInteger, isPositiveInteger, isNegativeInteger, isPositive, } from "./modules/regexp-rule";
+export { createEnum } from "./modules/enum";

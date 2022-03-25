@@ -6,4 +6,8 @@ export declare function isCardID(sId: any): boolean;
 export declare function isInteger(s: any): boolean;
 export declare function isPositiveInteger(s: any): boolean;
 export declare function isNegativeInteger(s: any): boolean;
+export declare function isFloat(s: any): boolean;
 export declare function isPositive(s: any): boolean;
+export declare function isNegative(s: any): boolean;
+export declare function isNotNegative(s: any): boolean;
+export declare function isNotPositive(s: any): boolean;

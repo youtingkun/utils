@@ -8,3 +8,4 @@ export declare function getRecentWeekDays(): any[];
 export declare function getRecentDayHours(): any[];
 export declare function getRecentMonthDays(): any[];
 export declare function getRecentYearMonths(): any[];
+export declare function dayOfYear(date: Date): void;
