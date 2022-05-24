@@ -86,14 +86,18 @@ export function copyToBoard(value) {
   const element = document.createElement("textarea");
   document.body.appendChild(element);
   element.value = value;
+
+  const selected =
+    document.getSelection().rangeCount > 0
+      ? document.getSelection().getRangeAt(0)
+      : false;
   element.select();
-  if (document.execCommand("copy")) {
-    document.execCommand("copy");
-    document.body.removeChild(element);
-    return true;
-  }
+  document.execCommand("copy");
   document.body.removeChild(element);
-  return false;
+  if (selected) {
+    document.getSelection().removeAllRanges();
+    document.getSelection().addRange(selected);
+  }
 }
 // 复制内容到剪贴板
 const copyToClipboard = (text) => {
