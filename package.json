@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/youtingkun/ytk-utils.git"
+    "url": "git+https://github.com/youtingkun/utils.git"
   },
   "author": "youtingkun",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/youtingkun/ytk-utils/issues"
+    "url": "https://github.com/youtingkun/utils/issues"
   },
-  "homepage": "https://github.com/youtingkun/ytk-utils#readme",
+  "homepage": "https://github.com/youtingkun/utils#readme",
   "devDependencies": {
     "@babel/cli": "^7.15.4",
     "@babel/core": "^7.15.5",
@@ -41,5 +41,8 @@
   },
   "hooks": {
     "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+  },
+  "dependencies": {
+    "crypto-js": "^4.1.1"
   }
 }
