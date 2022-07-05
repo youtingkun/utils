@@ -17,7 +17,7 @@ export const isQQBrowser = () => {
 
 // 是否为ios系统
 export const isIos = () => {
-  var u = navigator.userAgent;
+  const u = navigator.userAgent;
   if (u.indexOf("Android") > -1 || u.indexOf("Linux") > -1) {
     //安卓手机
     return false;
@@ -37,8 +37,8 @@ export const isIos = () => {
 
 // 是否为pc端
 export const isPC = () => {
-  var userAgentInfo = navigator.userAgent;
-  var Agents = [
+  const userAgentInfo = navigator.userAgent;
+  const Agents = [
     "Android",
     "iPhone",
     "SymbianOS",
@@ -46,8 +46,8 @@ export const isPC = () => {
     "iPad",
     "iPod",
   ];
-  var flag = true;
-  for (var v = 0; v < Agents.length; v++) {
+  let flag = true;
+  for (let v = 0; v < Agents.length; v++) {
     if (userAgentInfo.indexOf(Agents[v]) > 0) {
       flag = false;
       break;

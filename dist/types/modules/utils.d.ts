@@ -9,7 +9,6 @@ export declare const getScrollPosition: (el?: any) => {
 };
 export declare const scrollToTop: () => void;
 export declare const shuffle: (arr: any) => any[];
-export declare function copyToBoard(value: any): boolean;
 /**
  * @description:
  * @param {*} length 生成字符串的长度

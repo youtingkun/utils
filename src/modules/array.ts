@@ -1,29 +1,31 @@
+interface item {
+  id: number;
+  parentId: number;
+  name: string;
+  children?: Array<item>;
+}
+interface mapObject {
+  [key: number]: item;
+}
+
 // 把一个平面数组根据parentId转为一个树结构的数组
-export function listToTree(data) {
+export function listToTree(data: Array<item>): Array<item> {
   // 空数组
-  let result = [];
-  // 判断不是数组  直接返回
-  if (!Array.isArray(data)) {
-    return result;
-  }
-  // 遍历  删除  children 属性  做初始化操作
-  data.forEach((item) => {
-    delete item.children;
-  });
+  const result: Array<item> = [];
   /**
    * map对象的 键: 是每个id  值：对应的item
    * 1: {id: 1, parentId: 0, name: "body"}
    * 2: {id: 2, parentId: 1, name: "title"}
    * 3: {id: 3, parentId: 2, name: "div"}
    */
-  let map = {};
+  const map: mapObject = {};
   data.forEach((item) => {
     map[item.id] = item;
   });
 
   data.forEach((item) => {
     // item.parentId 为0时 返回underfined
-    let parent = map[item.parentId]; // 这里的赋值由于是地址的引用，所以对parent值进行操作，也会改变map的值
+    const parent = map[item.parentId]; // 这里的赋值由于是地址的引用，所以对parent值进行操作，也会改变map的值
     if (parent) {
       (parent.children || (parent.children = [])).push(item);
     } else {
@@ -39,13 +41,13 @@ export function listToTree(data) {
  * @param {*} arr
  * @return {*}
  */
-export function uniqueArray(arr) {
+export function uniqueArray(arr: Array<any>): Array<any> {
   if (!Array.isArray(arr)) {
-    throw new Error("The first parameter must be an array");
+    throw new Error("The parameter must be an array");
   }
   if (arr.length == 1) {
     return arr;
   }
-  let set = new Set(arr);
+  const set = new Set(arr);
   return Array.from(set);
 }

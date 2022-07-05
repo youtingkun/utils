@@ -1,0 +1,12 @@
+export declare function isEmail(s: string): boolean;
+export declare function isMobile(s: string): boolean;
+export declare function isPhone(s: string): boolean;
+export declare function isURL(s: string): boolean;
+export declare function isInteger(s: string): boolean;
+export declare function isPositiveInteger(s: string): boolean;
+export declare function isNegativeInteger(s: string): boolean;
+export declare function isFloat(s: string): boolean;
+export declare function isPositive(s: string): boolean;
+export declare function isNegative(s: string): boolean;
+export declare function isNotNegative(s: string): boolean;
+export declare function isNotPositive(s: string): boolean;

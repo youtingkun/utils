@@ -1,6 +1,6 @@
 export { getQueryString } from "./modules/url";
 export { listToTree } from "./modules/array";
-export { traverseObj, treeToList, deepCopy } from "./modules/object";
+export { treeToList } from "./modules/object";
 export {
   isString,
   isNumber,
@@ -31,7 +31,6 @@ export {
   isMobile,
   isPhone,
   isURL,
-  isCardID,
   isInteger,
   isPositiveInteger,
   isNegativeInteger,
@@ -39,16 +38,6 @@ export {
 } from "./modules/regexp-rule";
 
 export { createEnum } from "./modules/enum";
-
-export {
-  setStorage,
-  removeStorage,
-  clearStorage,
-  getStorage,
-  hasStorage,
-  getStorageAll,
-  getStorageKeys,
-} from "./modules/storage";
 
 //  npm run build 先在本地build好打包之后的文件
 //  Git commit之后，运行npm version v1.0.0,就可以添加新版本，并把记录添加到CHANGELOG.md里面,并推送到github，并自动发布到npm。

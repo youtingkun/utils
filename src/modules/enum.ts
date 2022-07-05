@@ -10,9 +10,18 @@
  * 通过枚举值获取描述：STATUS.getDescFromValue(STATUS.WAIT)
  *
  */
-export function createEnum(definition:any) {
-  const strToValueMap = {};
-  const numToDescMap = {};
+interface enumObj {
+  [key: string]: [number, string];
+}
+interface strMap {
+  [key: string]: number;
+}
+interface numMap {
+  [key: number]: string;
+}
+export function createEnum(definition: enumObj) {
+  const strToValueMap: strMap = {};
+  const numToDescMap: numMap = {};
   for (const enumName of Object.keys(definition)) {
     const [value, desc] = definition[enumName];
     strToValueMap[enumName] = value;
@@ -20,10 +29,10 @@ export function createEnum(definition:any) {
   }
   return {
     ...strToValueMap,
-    getDesc(enumName) {
+    getDesc(enumName: string) {
       return (definition[enumName] && definition[enumName][1]) || "";
     },
-    getDescFromValue(value) {
+    getDescFromValue(value: number) {
       return numToDescMap[value] || "";
     },
   };

@@ -1,41 +1,46 @@
 declare const window: any;
 // 动态的引入js脚本
-export const injectScript = (src) => {
+export const injectScript = (src: any) => {
   const s = document.createElement("script");
   s.type = "text/javascript";
   s.async = true;
   s.src = src;
   const t = document.getElementsByTagName("script")[0];
-  t.parentNode.insertBefore(s, t);
+  if (t.parentNode) {
+    t.parentNode.insertBefore(s, t);
+  }
 };
 
 // 判断元素是否包含某个class
-export const hasClass = (el, className) => {
-  let reg = new RegExp("(^|\\s)" + className + "(\\s|$)");
+export const hasClass = (el: any, className: any) => {
+  const reg = new RegExp("(^|\\s)" + className + "(\\s|$)");
   return reg.test(el.className);
 };
 
 // 给元素添加class
-export const addClass = (el, className) => {
+export const addClass = (el: any, className: any) => {
   if (hasClass(el, className)) {
     return;
   }
-  let newClass = el.className.split(" ");
+  const newClass = el.className.split(" ");
   newClass.push(className);
   el.className = newClass.join(" ");
 };
 
 // 移除元素的某个class
-export const removeClass = (el, className) => {
+export const removeClass = (el: any, className: any) => {
   if (!hasClass(el, className)) {
     return;
   }
-  let reg = new RegExp("(^|\\s)" + className + "(\\s|$)", "g");
+  const reg = new RegExp("(^|\\s)" + className + "(\\s|$)", "g");
   el.className = el.className.replace(reg, " ");
 };
 
 // 判断元素是否在视窗范围内
-export const elementIsVisibleInViewport = (el, partiallyVisible = false) => {
+export const elementIsVisibleInViewport = (
+  el: any,
+  partiallyVisible = false
+) => {
   const { top, left, bottom, right } = el.getBoundingClientRect();
   const { innerHeight, innerWidth } = window;
   return partiallyVisible
@@ -61,18 +66,18 @@ export const scrollToTop = () => {
 };
 
 // 滚动到某个元素的顶部
-const scrollToElementTop = (element) => {
+const scrollToElementTop = (element: any) => {
   element.scrollIntoView({ behavior: "smooth", block: "start" });
 };
 // 滚动到某个元素的底部
-const scrollToElementBottom = (element) => {
+const scrollToElementBottom = (element: any) => {
   element.scrollIntoView({ behavior: "smooth", block: "end" });
 };
 
 // 洗牌算法
-export const shuffle = (arr) => {
-  var result = [],
-    random;
+export const shuffle = (arr: any) => {
+  const result = [];
+  let random: any;
   while (arr.length > 0) {
     random = Math.floor(Math.random() * arr.length);
     result.push(arr[random]);
@@ -82,25 +87,7 @@ export const shuffle = (arr) => {
 };
 
 // 复制内容到剪贴板
-export function copyToBoard(value) {
-  const element = document.createElement("textarea");
-  document.body.appendChild(element);
-  element.value = value;
-
-  const selected =
-    document.getSelection().rangeCount > 0
-      ? document.getSelection().getRangeAt(0)
-      : false;
-  element.select();
-  document.execCommand("copy");
-  document.body.removeChild(element);
-  if (selected) {
-    document.getSelection().removeAllRanges();
-    document.getSelection().addRange(selected);
-  }
-}
-// 复制内容到剪贴板
-const copyToClipboard = (text) => {
+const copyToClipboard = (text: any) => {
   navigator.clipboard?.writeText && navigator.clipboard.writeText(text);
 };
 
@@ -110,7 +97,7 @@ const copyToClipboard = (text) => {
  * @param {*} chars
  * @return {*}
  */
-export function generateUUID(length, chars) {
+export function generateUUID(length: any, chars: any) {
   chars =
     chars || "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
   length = length || 8;

@@ -10,7 +10,11 @@
  * 通过枚举值获取描述：STATUS.getDescFromValue(STATUS.WAIT)
  *
  */
-export declare function createEnum(definition: any): {
-    getDesc(enumName: any): any;
-    getDescFromValue(value: any): any;
+interface enumObj {
+    [key: string]: [number, string];
+}
+export declare function createEnum(definition: enumObj): {
+    getDesc(enumName: string): string;
+    getDescFromValue(value: number): string;
 };
+export {};
