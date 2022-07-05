@@ -1,3 +1,12 @@
+# [2.1.0](https://github.com/youtingkun/utils/compare/v2.0.9...v2.1.0) (2022-07-05)
+
+
+### Features
+
+* storage ([92c4ed3](https://github.com/youtingkun/utils/commit/92c4ed38cbb97f27cd139705b4df61a5c143aef4))
+
+
+
 ## [2.0.9](https://github.com/youtingkun/ytk-utils/compare/v2.0.8...v2.0.9) (2022-03-25)
 
 
