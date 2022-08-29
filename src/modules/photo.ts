@@ -1,70 +1,59 @@
-// 图片压缩
-export async function imgCompress(
-  imgFile: any,
-  quality: number,
-  maxSize: number
-) {
+/**
+ * 压缩图片
+ * @param imgFile 被压缩的img文件
+ * @param quality 图片压缩质量
+ * @param maxSize 如果小于maxSize不用压缩,单位M
+ */
+export async function imgCompress(imgFile: any, quality = 0.7, maxSize = 0.1) {
   // 如果小于maxSize不用压缩
   if (imgFile.size < maxSize * 1024 * 1024) {
     return imgFile;
   }
-  console.log("压缩前的大小：", imgFile.size);
   const type = imgFile.type;
-  const dataURL = await file2DataURL(imgFile);
-  const img = await dataURL2Image(dataURL);
-  const compressedDataURL = await canvasCompress(img, quality, type);
-  const compressedResult: any = await dataURL2Blob(compressedDataURL, type);
-  compressedResult.fileName = imgFile.name;
-  console.log("压缩后的大小：", compressedResult.size);
-  return compressedResult;
+  const name = imgFile.name;
+  console.log("压缩前的大小：", imgFile.size);
+  const imgObj = await readImg(imgFile);
+  const res: any = await compressImg(imgObj, quality, type);
+  res.name = name;
+  console.log("压缩后的大小：", res.size);
+  return res;
 }
-
-function file2DataURL(file: any) {
-  return new Promise((resolve, reject) => {
-    const reader = new FileReader();
-    reader.onload = function () {
-      const dataURL = this.result;
-      resolve(dataURL);
-    };
-    reader.readAsDataURL(file);
-  });
-}
-
-function dataURL2Image(dataURL: any) {
+function readImg(file: any) {
   return new Promise((resolve, reject) => {
     const img = new Image();
-    img.onload = () => {
+    const reader = new FileReader();
+    reader.onload = function (e: any) {
+      img.src = e.target.result;
+    };
+    reader.onerror = function (e) {
+      reject(e);
+    };
+    reader.readAsDataURL(file);
+    img.onload = function () {
       resolve(img);
     };
-    img.src = dataURL;
+    img.onerror = function (e) {
+      reject(e);
+    };
   });
 }
-
-function canvasCompress(img: any, quality: number, type: string) {
+function compressImg(img: any, quality: number, type: string) {
   return new Promise((resolve, reject) => {
     const canvas = document.createElement("canvas");
+    const context = canvas.getContext("2d");
     const { width, height } = img;
     canvas.width = width;
     canvas.height = height;
-    const context = canvas.getContext("2d");
-    if (context) {
-      context.drawImage(img, 0, 0, width, height);
-      const compressedDataURL = canvas.toDataURL(type, quality);
-      resolve(compressedDataURL);
-    }
-  });
-}
-
-function dataURL2Blob(dataURL: any, type: string) {
-  return new Promise((resolve, reject) => {
-    const text = window.atob(dataURL.split(",")[1]);
-    const buffer = new ArrayBuffer(text.length);
-    const ubuffer = new Uint8Array(buffer);
-    for (let i = 0; i < text.length; i++) {
-      ubuffer[i] = text.charCodeAt(i);
-    }
-    const blob = new window.Blob([buffer], { type });
-    resolve(blob);
+    context?.clearRect(0, 0, width, width);
+    // 图片绘制
+    context?.drawImage(img, 0, 0, width, width);
+    canvas.toBlob(
+      function (blob) {
+        resolve(blob);
+      },
+      type,
+      quality
+    );
   });
 }
 
